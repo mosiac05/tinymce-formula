@@ -1,6 +1,8 @@
-# tinyMCE formula plugin
+# tinyMCE (v6) formula plugin
 
-Formula plugin for tinyMCE WYSIWYG editor. Allows user to add equations and formulas inside tinymce.
+Formula plugin for tinyMCE (v6) WYSIWYG editor hook in a Phoenix Liveview project. Allows user to add equations and formulas inside tinymce.
+
+This is an updated version of the tinyMCE Plugin. The original plugin was created by [TSAVDARIS Panagiotis](https://github.com/ptsavdar) and can be found at [https://github.com/ptsavdar/tinymce-formula].
 
 ## Browser compatibility
 
@@ -14,41 +16,21 @@ Formula plugin for tinyMCE WYSIWYG editor. Allows user to add equations and form
 
 * [tinyMCE](http://www.tinymce.com/)
 
-## Usage
+## Usage for Phoenix Liveview project
 
-Install using bower.
-
-```
-bower install tinymce-formula
-```
-
-Install using npm.
-
-```
-npm install tinymce-formula
-```
-
-Or copy the source of the plugin to the plugins directory of your tinyMCE installation.
-Add the formula plugin to your tinyMCE configuration
+Clone or download the repo into your `priv/static/images` directory.
+Add configuration options for the formula plugin.
 
 ```javascript
-plugins: "... formula",
-```
-
-Add configuration options for the formula plugin. `path` is the only setting and is optional.
-
-```javascript
-formula: {
-    path: 'path/to/public/plugin/folder'
+external_plugins: {
+    'formula': '/images/tinymce-formula/plugin.min.js'
 },
 ```
 
-## Configuration
-
-### path (optional if plugin installed inside `tinymce/plugins` folder, required otherwise)
-
-If you have installed the plugin in a different folder than the ```tinymce/plugins``` folder then you need to specify 
-the path (public) where the plugin is installed.
+Add the 'formula' plugin into the 'toolbar' option.
+```javascript
+toolbar: ... + 'formula',
+```
 
 ## License
 
